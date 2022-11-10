@@ -1,0 +1,222 @@
+:root {
+    --grey:#dddddd;
+    --red1: #e74149;
+    
+}
+
+
+
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html * {
+    box-sizing: border-box;
+}
+body {
+
+}
+
+header.top {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   z-index: 20;
+
+   display: flex;
+   /* Elemente innerhalb des <header class="top" */
+   justify-content: space-between;
+
+   padding: 30px;
+
+  
+}
+
+/* das ausklappbare Menü- <ul></ul> wird ausgeblendet */
+#main-menu ul {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0%;
+    width: 100%;
+    height: 100%;
+    background: white;
+    margin: 0;
+    list-style: none;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    font-size: 3rem;
+
+}
+
+#main-menu-btn:checked + ul {
+    display: flex;
+
+}
+
+#main-menu-btn {
+    position: relative;
+    z-index: 100;
+    width: 30px;
+    height: 30px;
+    margin: 0;
+    right: 15px;
+    opacity: 0;
+    cursor: pointer;
+
+}
+
+#main-menu-btn {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+
+
+}
+
+#main-menu::after {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 110;
+    background: url(../img/nav.icon.svg) no-repeat center center / contain;
+    pointer-events: none;
+}
+
+#main-menu-btn:checked +  ul {
+    display: flex;
+}
+
+  
+
+
+/* Hero Image */
+#hero-image {
+    background: url(../img/blog-banner.png) no-repeat center top / cover;
+    height: 300px;
+    padding: 15px;
+    position: relative;
+
+    display: flex;
+
+    /* umkehren der Achse:
+    Elemente
+    
+    */
+    flex-direction: column;
+
+    /* vertikal in die Mitte platzieren */
+    justify-content: center;
+
+    
+}
+
+#hero-image::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0.5;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+
+h1 {
+    font-weight: 900;
+    color: white;
+    
+}
+
+#hero-image button, h1 {
+    position: relative;
+    z-index: 10;
+}
+
+#hero-image > .inner-wrapper {
+    width: 100%;
+    padding-left: 100px;
+    padding-right: 100px;
+
+}
+
+
+#hero-image button {
+    /*verwendet die Variablen für Farb-Angaben */
+    background:var(--red1) ;
+    color: white;
+    border-radius: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    position: relative;
+   border: none;
+   padding: 20px;
+}
+
+#hero-image button:hover {
+    background-color: black;
+}
+
+
+
+
+/* Common styles */
+
+a {
+    color:black;
+    text-decoration: underline;
+}
+a:hover {
+    text-decoration: underline;
+    color: red;
+    
+}
+.endline {
+    font-size: 12px;
+    text-align: center;
+}
+footer.the-only-one {
+    background-color: var(--grey);
+    padding: 15px;
+    
+}
+
+#footer-nav {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#footer-nav ul {
+  list-style-type: "\25b8";
+  padding-left: 0;
+
+}
+/* kann auch mit li::before angesprochen werden */
+#footer-nav ul li::marker {
+    color: red;
+    padding-right: 5px;
+}
+/* maximale Breite festlegen und Element zentrieren */
+.inner-wrapper {
+    max-width: 1024px;
+
+    /* zentriert ein Block-Element (gild für die Elemente die display:block 
+    als Eigenschaft haben */
+    margin-left: auto;
+    margin-right: auto;
+}
