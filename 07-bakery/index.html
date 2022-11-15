@@ -13,7 +13,9 @@
    
     <div class="wrapper">
 
-    <header>
+    <header id="main-header">
+        
+
         <!--hier beginnt das Logo-->
         <div id="logo">
             <a href="index.html">
@@ -24,9 +26,12 @@
 
 
          <!--hier beginnt die Navigation -->
-         <nav>
+         <nav id="main-nav">
+            <a href="#">
+                <img src="img/nav-icon.svg" alt="nav">
+            </a>
             <ul>
-                <li><a href="abaut.html">Über uns</a></li>
+                <li><a href="about.html">Über uns</a></li>
                 <li><a href="team.html">Unser Team</a></li>
                 <li><a href="gallery.html">Galerie</a></li>
                 <li><a href="contact.html">Kontakt</a></li>
@@ -39,8 +44,10 @@
 
         <div id="hero">
         
-            <img src="img/pexels-klaus-nielsen-6287298_large.jpg" width="1000" height="100" alt="">
+            <img src="img/pexels-klaus-nielsen-6287298_large.jpg" width="1000" height="100 alt=">
+            
         </div>
+        <div id="quality"></div>
 
    
 
@@ -70,13 +77,20 @@
 
     <footer>
         <nav id="footer-nav">
+
+            <address>
+                
+                Konditorei Bakery<br>
+                Salzburgerstraße 55<br>
+                5620 Schwarzach
+            </address>
             <ul>
-                <li><a href="#"></a>Datenschutz</li>
-                <li><a href="#"></a>Unser Team</li>
-                <li><a href="#"></a>Galerie</li>
-                <li><a href="#"></a>Kontakt</li>
-                <li><a href="#"></a>Impressum</li>
-                <li><a href="#"></a>Datenschutz &amp; Cookies</li>
+                <li><a href="#">Datenschutz</a></li>
+                <li><a href="#">Unser Team</a></li>
+                <li><a href="#">Galerie</a></li>
+                <li><a href="#">Kontak</a>t</li>
+                <li><a href="#">Impressum</a></li>
+                <li><a href="#">Datenschutz &amp; Cookies</a></li>
             </ul>
         </nav>
 
@@ -90,5 +104,14 @@
     </footer>
 
 </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+
+    <script>
+        $('#main-nav a').on('click', function() {
+            $('#main-nav > ul').toggleClass('show');
+        });
+    </script>
+
 </body>
 </html>
