@@ -1,58 +1,48 @@
-html, body {
-    margin: 0;
-    padding: 0;
-}
-
 :root {
     --gold: #c39065;
     --grey: #707070;
-
 }
-
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
 html * {
     box-sizing: border-box;
 }
-
 @font-face {
     font-family: joe;
-    src: url(../fonts/josefin-sans-v20-latin-regular.woff),
-         url(../fonts/josefin-sans-v20-latin-regular.woff2)
-    ;
+    src: url(../fonts/josefin-sans-v20-latin-regular.woff) format('woff'),
+        url(../fonts/josefin-sans-v20-latin-regular.woff2) format('woff2');
     font-weight: normal;
-}  
-
+}
 @font-face {
     font-family: joe;
     src: url(../fonts/josefin-sans-v20-latin-300.woff),
-         url(../fonts/josefin-sans-v20-latin-300.woff2); 
+        url(../fonts/josefin-sans-v20-latin-300.woff2);
     font-weight: lighter;
-    
 }
-
 @font-face {
     font-family: joe;
     src: url(../fonts/josefin-sans-v20-latin-700.woff),
-         url(../fonts/josefin-sans-v20-latin-700.woff2)
-        ; 
+        url(../fonts/josefin-sans-v20-latin-700.woff2);
     font-weight: bold;
-    
 }
+
+
 
 body {
     font-family: joe;
     font-size: 16px;
-   
-}
-
-p {
-    font-weight: normal;
 }
 
 img {
     max-width: 100%;
     height: auto;
-
 }
+
+
+
 
 #main-header {
     display: flex;
@@ -61,10 +51,18 @@ img {
     padding: 1em;
 }
 
+#main-header #logo {
+    flex: 2;
+}
 
-
-#main-header > * {
+#main-header #main-nav {
     flex: 1;
+}
+
+
+/* Main menu / Navigation */
+#main-nav {
+    text-align: right;
 }
 
 #main-nav > a {
@@ -73,7 +71,7 @@ img {
 }
 
 #main-nav > ul {
-    display: none; 
+    display: none;
     width: 100%;
     list-style: none;
     text-align: center;
@@ -93,14 +91,11 @@ img {
 #main-nav ul li {
     margin-top: 1em;
     margin-bottom: 1em;
-    border-bottom: 1px dashed rgba(red, green, blue, alpha);
+    border-bottom: 2px dashed rgba(255, 255, 255, 0.325);
 }
-
 #main-nav ul li:last-child {
     border-bottom: none;
 }
-
-
 
 #main-nav ul li a {
     color: #fff;
@@ -109,63 +104,11 @@ img {
     text-transform: uppercase;
 }
 
-/* Tablet */
 
-@media screen and (min-width:576px) {
-    #main-nav > ul {
-        background-color: transparent;
-        display: block;
-        position: relative;
-        top: auto;
-        right: auto;
-        font-size: 1em;
-        margin: 0;
-        padding: 0;
-    }
-
-    #main-nav ul li {
-        display: inline;
-    }
-
-    #main-nav > a {
-        display: none;
-    }
-
-    #logo {
-        max-width: 200px;
-    }
-    #main-nav ul li a {
-        color: rgb(104, 102, 102);
-        text-transform: none;
-        font-weight: bold;
-        
-
-
-
-
-
-    }
-}
-  
-    
-
-
-#main-nav {
-    text-align: right;
-}
-
-#main-header #logo {
-    flex: 2;
-}
-
-
-#main-header #main-nav {
-    flex: 1;
-}
 
 #quality {
     position: relative;
-    background-image: url(..//img/qualitaetssiegel-goldene-eichel_300.png);
+    background-image: url(../img/qualitaetssiegel-goldene-eichel_300.png);
     background-size: contain;
     background-repeat: no-repeat;
     width: 125px;
@@ -178,7 +121,6 @@ img {
 h1 {
     font-weight: lighter;
     text-align: center;
-
 }
 
 #products {
@@ -186,34 +128,35 @@ h1 {
     flex-flow: column;
     gap: 75px;
     padding: 50px;
-    align-items: center;
 }
+
 
 .button {
     display: inline-block;
     width: 75%;
+
     background-color: white;
     color: var(--grey);
     border: 2px solid var(--grey);
     font-size: 1.5rem;
-    padding: 0.75em 0.5em 0.75em 0.5em;
+    padding: 0.75em 0.5em;
     text-decoration: none;
     text-align: center;
     text-transform: uppercase;
-    align-self: center;
 
+    align-self: center;
 }
+
 
 #footer-nav {
     background: var(--gold);
     color: white;
     text-align: center;
-
 }
 
 #footer-nav ul {
     list-style: none;
-    padding: 0;
+    padding: 2rem 0;
     margin: 0;
 }
 
@@ -221,14 +164,12 @@ h1 {
     color: white;
     text-decoration: none;
     line-height: 2em;
-
+    
 }
 
-footer address {
-    display: none;
+nav#footer-nav address {
     padding-top: 2.5em;
-    
-
+    display: none;
 }
 
 #end {
@@ -236,12 +177,100 @@ footer address {
     color: #fff;
     padding: 2.5em;
     text-align: center;
-
 }
 
-#end p {
+#end p  {
     margin: 0;
-   
-
 }
 
+
+
+/* Tablet */
+@media screen and (min-width: 576px) {
+
+    #logo {
+        max-width: 200px;
+        height: auto;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #main-nav > a {
+        display: none;
+    }
+
+    #main-nav > ul {
+        display: flex !important;
+        justify-content: flex-end;
+        gap: 1em;
+        white-space: nowrap;
+        position: relative;
+        top: auto;
+        right: auto;
+        background-color: transparent;
+        font-size: 1em;
+        margin: 0;
+        padding: 1em;
+    }
+
+    #main-nav ul li {
+        border: none;
+        margin: 0;
+    }
+
+    #main-nav ul li a {
+        color: var(--grey);
+        text-transform: none;
+        font-weight: bold;
+    }
+
+
+    #hero img {
+        width: 100%;
+        max-height: 50vh;
+        object-fit: cover;
+        object-position: center center;
+    }
+
+
+    #products {
+        flex-flow: row;
+        gap: 30px;
+        padding: 0;
+        justify-content: center;
+    }
+
+    #products img {
+        flex: 1;
+        max-width: calc(25% - 40px);
+
+    }
+
+    nav#footer-nav address {
+        display: block;
+        text-align: left;
+        font-style: normal;
+        line-height: 2em;
+    }
+
+    #footer-nav {
+        display: flex;
+        justify-content: space-between;
+        padding: 30px;
+    }
+
+    #footer-nav-ul {
+        text-align: right;
+    }
+
+    .inner.wrapper {
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+
+}
